@@ -5,7 +5,7 @@
 #         self.next = next
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        size=0
+        '''size=0
         curr=head
         while curr:
             size+=1
@@ -14,4 +14,9 @@ class Solution:
         curr=head
         for i in range(mid):
             curr=curr.next
-        return curr
+        return curr'''
+        slow=fast=head
+        while fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next
+        return slow
